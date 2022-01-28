@@ -4,6 +4,7 @@ import { fetchPhoneById, addPhoneToBasket } from "../actions/Phones";
 import { getPhonesById } from "../selectors/Phones";
 import R from "ramda";
 import BasketCart from "./BasketCart";
+import AccountButton from "./AccountButton";
 import { Link } from "react-router";
 
 class Phone extends React.Component {
@@ -53,9 +54,9 @@ class Phone extends React.Component {
           <div className="col-md-6">{this.renderFields()}</div>
         </div>
         <div className="caption-full">
-          <h4 className="pull-right">${phone.price}</h4>
-          <h4>{phone.name}</h4>
-          <p>{phone.description}</p>
+          {/*<h4 className="pull-right">${phone.price}</h4>
+          <h2>{phone.name}</h2>
+          <p>{phone.description}</p>*/}
         </div>
       </div>
     );
@@ -66,11 +67,12 @@ class Phone extends React.Component {
     return (
       <div>
         <div>
-          <p className="lead"> Quick Shop</p>
-          <BasketCart />
+          {/*<p className="lead"> Quick Shop</p>
+          <BasketCart />*/}
           <div className="form-group">
             <h1>{phone.name}</h1>
-            <h2>{phone.price}</h2>
+            <h2>${phone.price}</h2>
+            <p>{phone.description}</p>
           </div>
         </div>
         <Link to="/" className="btn btn-info btn-block">
@@ -92,9 +94,33 @@ class Phone extends React.Component {
     const { phone } = this.props;
     return (
       <div className="view-container">
+        
+        {/* Website Header */}
+        <div className="web-header">
+                <div className="row" style={{margin: '20px'}}>
+                    <div className="col-md-8">
+                    <img className="img-logo" src="/uploads/phone123.png" 
+                    alt="Apple iPhone 5c"></img>
+                    <h1>The Phone Shop</h1>
+                    </div>
+                    
+                    <div className="header-cart col-md-2">
+                        <BasketCart />
+                    </div>
+    
+                    <div className="header-account col-md-2">
+                        <AccountButton />
+                    </div>
+
+
+                </div>
+          </div>
+
+
+
         <div className="container">
-          <div className="col-md-9">{phone && this.renderContent()}</div>
-          <div className="col-md-3">{phone && this.renderSideBar()}</div>
+          <div className="col-md-8">{phone && this.renderContent()}</div>
+          <div className="col-md-4">{phone && this.renderSideBar()}</div>
         </div>
       </div>
     );
@@ -120,8 +146,6 @@ const mapDispatchtoProps = (dispatch) => ({
         display: phone.display,
         battery: phone.battery,
         memory: phone.memory,
-        category: "Products",
-        label: phone.name,
       });
   },
 });

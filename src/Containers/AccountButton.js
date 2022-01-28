@@ -21,14 +21,21 @@ class AccountButton extends React.Component {
       <div className="itemButton">
         {!this.state.isLoggedIn && (
         <Link to="/profile" id="dLabel">
-          <button
+          <button style={{
+            width:'60%', 
+            'borderRadius': '4px', 
+            'backgroundColor': '#101940', 
+            border: '4',
+            color: "white",
+            'marginTop': '160px',
+            }}
             className="btn btn-default btn-block"
           >
           <span className="glyphicon glyphicon-user" /> 
           
             {(!this.state.isLoggedIn 
               && !this.state.isRegistered) 
-              ? 'Register' : 'Sign In'}
+              ? ' Register' : ' Sign In'}
 
           </button>
         </Link>

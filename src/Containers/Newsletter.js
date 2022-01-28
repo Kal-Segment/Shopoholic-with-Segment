@@ -20,17 +20,11 @@ class Newsletter extends React.Component {
       email: this.state.emailValue,
     });
 
-    analytics.group("000111a", {
-      group_id_number: "000111a",
-      name: "Email Group",
-    })
-
     analytics.track("Newsletter Subscribed", {
-      email: this.state.emailValue,
       category: "Newsletter",
     });
 
-    alert("Thank you for subscribing dude, " + this.state.emailValue + "!");
+    alert("Thank you for subscribing, " + this.state.emailValue + "!");
   };
 
   onNewsletterInputChange = (e) => {
@@ -49,6 +43,7 @@ class Newsletter extends React.Component {
           <div className="input-group">
             <input
               type="text"
+              placeholder="Email Address"
               className="form-control"
               value={this.state.searchValue}
               onChange={this.onNewsletterInputChange}

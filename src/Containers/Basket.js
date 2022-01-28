@@ -22,7 +22,7 @@ const Basket = ({
   orderId,
 }) => {
   // Segment page() call
-  analytics.page("Basket");
+  analytics.page("Shopping Cart");
   const isBasketEmpty = R.isEmpty(phones);
   const renderContent = () => {
     return (
@@ -118,7 +118,7 @@ const mapDispatchToProps = (dispatch) => ({
     let orderId = Math.random().toString(36).substring(7);
     analytics.track("Checkout Clicked", {
       order_id: orderId,
-      value: totalPrice,
+      total: totalPrice,
       products: phones,
       category: "Checkout",
     });

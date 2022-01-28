@@ -8,7 +8,7 @@ import { addPhoneToBasket } from "../actions/Phones";
 
 class Phones extends React.Component {
   componentDidMount() {
-    window.analytics.page("Phones");
+    window.analytics.page("Home");
     this.props.fetchPhones();
     this.props.fetchCategories();
   }
@@ -24,8 +24,7 @@ class Phones extends React.Component {
         <div className="caption">
           <h4 className="pull-right">${phone.price}</h4>
           <h4>{phone.name}</h4>
-          <p> {shortDesc}</p>
-          <p className="itemButton">
+          <p className="itemButton listing">
             <button
               className="btn btn-primary"
               onClick={() => addPhoneToBasket(phone)}
@@ -76,8 +75,6 @@ const mapDispatchToProps = (dispatch) => ({
         display: phone.display,
         battery: phone.battery,
         memory: phone.memory,
-        category: "Products",
-        label: phone.name,
       });   
   },
   fetchCategories: () => dispatch(fetchCategories()),
@@ -94,7 +91,6 @@ function moreInfo(phone) {
     name: phone.name,
     brand: phone.brand,
     category: "Products",
-    label: phone.name,
   });
 }
 

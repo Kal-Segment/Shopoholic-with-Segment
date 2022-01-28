@@ -9,6 +9,7 @@ import R from "ramda";
 const Categories = (props) => {
   const { categories, activeCategoryId } = props;
   // console.log(" activeCategoryId " , activeCategoryId);
+  let activeIdNumber = activeCategoryId - 1;
   const renderCategory = (category, index) => {
     const getActiveState = R.propEq("id", activeCategoryId);
     const linkClass = classNames({
@@ -41,7 +42,7 @@ const Categories = (props) => {
       <div className="list-group">
         {renderAllCategory()}
         {categories.map((category, index) => {
-          // console.log(category);
+          //console.log(category);
           return renderCategory(category, index);
         })}
       </div>

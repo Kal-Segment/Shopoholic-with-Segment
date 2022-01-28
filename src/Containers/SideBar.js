@@ -7,14 +7,14 @@ import AccountButton from "./AccountButton";
 export const SideBar = () => {
   return (
     <div>
-      <div className="row">
+      {/*<div className="row">
         <BasketCart />
       </div>
       
       <div className="row">
         <AccountButton />
       </div>
-      <br />
+      <br />*/}
 
       <Categories />
       <Newsletter />

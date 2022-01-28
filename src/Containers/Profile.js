@@ -185,7 +185,6 @@ const mapDispatchToProps = (dispatch) => ({
       firstName: id.firstName,
       lastName: id.lastName,
       username: id.userName,
-      password: id.password,
     });
     analytics.track('User Registered',
     {

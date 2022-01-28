@@ -134,5 +134,6 @@ export const basketCheckout = (phones) => (dispatch, getState) => {
     0
   );
 
-  alert(JSON.stringify(phones));
+  //alert(JSON.stringify(phones));
+  alert("Checkout Flow Begins Here...")
 };

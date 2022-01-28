@@ -9,7 +9,7 @@ export default [
     },
     {
       id: "3",
-      name: 'Htc'
+      name: 'HTC'
     },
     {
       id: "4",
